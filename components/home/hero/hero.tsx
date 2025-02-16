@@ -6,7 +6,7 @@ import { Calendar, MapPin, Briefcase, User} from "lucide-react";
 
 export default function Hero() {
   return (
-    <div className="relative flex items-center justify-between w-full h-[calc(100vh-10px)]">
+    <div className="relative flex items-center justify-between w-full min-h-screen pb-8">
       {/* Image de fond */}
       <Image
         className="absolute inset-0 w-full h-full object-cover"
@@ -36,7 +36,7 @@ export default function Hero() {
               <Checkbox className="text-white" defaultSelected>Paiement liquide</Checkbox>
             </div>
 
-            <Button color="secondary" radius="full" className="mt-6 w-1/2 text-white p-6">
+            <Button color="secondary" radius="full" className="mt-6 w-1/2 text-white p-6 mb-8">
               Valider ma reservation
             </Button>
           </div>
