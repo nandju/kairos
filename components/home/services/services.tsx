@@ -96,10 +96,7 @@ export default function Service() {
           <ServiceCard key={index} {...service} />
         ))}
       </div>
-      <div className="text-center mt-8">
-        <Button className="bg-secondary text-white px-8 py-3 rounded-full font-medium ">
-          Réserver
-        </Button>
+      <div className="my-8">
       </div>
     </div>
   );
