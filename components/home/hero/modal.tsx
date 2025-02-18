@@ -1,3 +1,5 @@
+"use client";
+import React from "react";
 import {
     Modal,
     ModalContent,
@@ -9,13 +11,44 @@ import {
     Input,
 //    DateInput,
     Checkbox,
-    DatePicker
+    DatePicker,
+    CheckboxGroup
   } from "@nextui-org/react";
 //   import { Calendar, MapPin, Briefcase, User, Car } from "lucide-react";
 import {now, getLocalTimeZone} from "@internationalized/date";
   
   export default function ReservationForm() {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
+    const [scrollBehavior, setScrollBehavior] =
+        React.useState<"inside" | "outside">("inside");
+    const vehicleTypes = [
+        {
+          name: "Berline",
+          picture: "/assets/images/illustrations/no-background/Berline-removebg-preview.png", // Remplace par une vraie image
+          seats: 4,
+        },
+        {
+          name: "SUV",
+          picture: "/assets/images/illustrations/no-background/SUV-removebg-preview.png",
+          seats: 4,
+        },
+        {
+          name: "VAN",
+          picture: "/assets/images/illustrations/no-background/VAN-removebg-preview.png",
+          seats: 7,
+        },
+        {
+          name: "Mini-Bus",
+          picture: "/assets/images/illustrations/no-background/Mini-Bus-removebg-preview.png",
+          seats: 15,
+        },
+        {
+          name: "Véhicule Utilitaire",
+          picture: "/assets/images/illustrations/no-background/Véhicule-removebg-preview.png",
+          seats: "N/A", // Pas de nombre de places spécifié
+        },
+      ];
+      
   
     return (
       <>
@@ -27,7 +60,7 @@ import {now, getLocalTimeZone} from "@internationalized/date";
         >
           Réserver Maintenant
         </Button>
-        <Modal backdrop="blur" isOpen={isOpen} onOpenChange={onOpenChange}>
+        <Modal backdrop="blur" scrollBehavior="outside" isOpen={isOpen} onOpenChange={onOpenChange}>
           <ModalContent className="bg-gray-100 font-poppins text-primary rounded-lg">
             {(onClose) => (
               <>
@@ -65,18 +98,28 @@ import {now, getLocalTimeZone} from "@internationalized/date";
                       className="w-full"
                     //   startContent={<MapPin className="w-5 h-5 text-gray-400" />}
                     />
-                    {/* Checkbox pour choisir le type de véhicule */}
-                    <div className="flex flex-col space-y-2">
-                      <label className="font-semibold text-lg flex items-center">
-                        {/* <Car className="w-5 h-5 text-gray-400 mr-2" /> */}
-                         Type de Véhicule
-                      </label>
-                      <div className="flex flex-col space-x-4">
-                        <Checkbox>Économique</Checkbox>
-                        <Checkbox>Berline</Checkbox>
-                        <Checkbox>Véhicule de luxe</Checkbox>
-                      </div>
-                    </div>
+                  {/* Sélection du type de véhicule */}
+                  <div className="flex flex-col space-y-2">
+                    <label className="font-semibold text-lg flex items-center">
+                      Type de Véhicule
+                    </label>
+                    <CheckboxGroup
+                      className="flex flex-col space-y-2"
+                    >
+                      {vehicleTypes.map((vehicle) => (
+                        <Checkbox key={vehicle.name} value={vehicle.name}>
+                          <div className="flex items-center space-x-3">
+                            <img
+                              src={vehicle.picture}
+                              alt={vehicle.name}
+                              className="w-10 h-10 rounded-md object-contain"
+                            />
+                            <span>{vehicle.name} - {vehicle.seats} places</span>
+                          </div>
+                        </Checkbox>
+                      ))}
+                    </CheckboxGroup>
+                  </div>
 
 
 
@@ -93,7 +136,7 @@ import {now, getLocalTimeZone} from "@internationalized/date";
                   </div>
                 </ModalBody>
                 <ModalFooter>
-                  <Button color="danger" variant="light" onPress={onClose}>
+                  <Button color="default" className="bg-secondary text-secondary-foreground" variant="flat" onPress={onClose}>
                     Fermer
                   </Button>
                   <Button color="primary" onPress={onClose}>
