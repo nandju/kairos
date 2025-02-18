@@ -1,8 +1,10 @@
-"use client";
+ "use client";
 
 import Image from "next/image";
 import { Button, Input, DateInput, Checkbox } from "@nextui-org/react";
 import { Calendar, MapPin, Briefcase, User} from "lucide-react";
+import {motion} from "framer-motion";
+import ReservationForm from "./modal";
 
 export default function Hero() {
   return (
@@ -23,22 +25,23 @@ export default function Hero() {
         <div className="relative flex items-start text-start justify-between p-10 mt-8 gap-20 max-w-5xl w-full ">
           {/* Partie gauche : Texte et formulaire */}
           <div className="w-full md:w-1/2 ">
-            <h2 className="text-4xl font-bold text-white">Voyagez en toute sérénité</h2>
-            <p className="text-gray-300 mt-3 text-lg">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white">Voyagez en toute sérénité</h2>
+            <p className="text-gray-300 mt-3 text-lg md:text-xl lg:text-2xl">
               Réservez un chauffeur professionnel en quelques clics et profitez d’un trajet confortable et sécurisé.
             </p>
 
-            <div className="mt-6 grid grid-cols-1 gap-4">
+            {/* <div className="mt-6 grid grid-cols-1 gap-4">
               <Input color="default" type="text" label="Nombre de passagers" className="w-full" startContent={<User className="w-5 h-5 text-gray-500" />}/>
               <Input color="default" type="text" label="Nombre de valises" className="w-full" startContent={<Briefcase className="w-5 h-5 text-gray-500" />}/>
               <DateInput granularity="second" label="Temps de reservation"  startContent={<Calendar className="w-5 h-5 text-gray-500" />}/>
               <Input color="default" type="text" label="Lieu de prise en charge" className="w-full" startContent={<MapPin className="w-5 h-5 text-gray-500" />} />
               <Checkbox className="text-white" defaultSelected>Paiement liquide</Checkbox>
-            </div>
+            </div> */}
 
-            <Button color="secondary" radius="full" className="mt-6 w-1/2 text-white p-6 mb-8">
+            {/* <Button color="secondary" radius="full" className="mt-6 w-1/2 text-white p-6 mb-8">
               Valider ma reservation
-            </Button>
+            </Button> */}
+            <ReservationForm/>
           </div>
 
           {/* Partie droite : Image */}
