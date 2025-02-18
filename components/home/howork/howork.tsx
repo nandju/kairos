@@ -15,7 +15,7 @@ export default function HowWork() {
             <div className="bg-primary text-xl text-white w-16 h-16 flex items-center justify-center rounded-xl transform rotate-0 md:rotate-[-10deg]">
               <MapPin className="w-8 h-8" />
             </div>
-            <div className="text-lg font-semibold">Choisissez l'emplacement</div>
+            <div className="text-lg font-semibold">Choisissez l&apos;emplacement</div>
             <p className="text-gray-600 text-sm hidden md:block">
               Sélectionnez votre lieu de prise en charge pour que notre chauffeur puisse vous rejoindre rapidement.
             </p>
@@ -28,7 +28,7 @@ export default function HowWork() {
             </div>
             <div className="text-lg font-semibold">Date de prise en charge</div>
             <p className="text-gray-600 text-sm hidden md:block">
-              Indiquez la date et l'heure souhaitées pour organiser votre trajet en toute sérénité.
+              Indiquez la date et l&apos;heure souhaitées pour organiser votre trajet en toute sérénité.
             </p>
           </div>
 

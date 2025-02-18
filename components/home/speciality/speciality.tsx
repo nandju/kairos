@@ -11,7 +11,7 @@ export default function Speciality() {
           Meilleurs services et voitures de luxe
         </h2>
         <p className="text-2xl mt-2 text-secondary">
-          Profitez d'une expérience de réservation rapide et efficace avec des véhicules haut de gamme et un service client dédié.
+          Profitez d&apos;une expérience de réservation rapide et efficace avec des véhicules haut de gamme et un service client dédié.
         </p>
       </div>
 

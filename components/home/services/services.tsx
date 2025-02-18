@@ -1,5 +1,5 @@
-import { Button } from "@nextui-org/react";
 import React from "react";
+import Image from "next/image";
 
 // Interface pour les services
 interface ServiceProps {
@@ -16,9 +16,15 @@ interface ServiceProps {
 const ServiceCard = ({ title, description, price, details, features, image, color }: ServiceProps) => (
   <div className="rounded-lg border p-6 flex flex-col h-full">
     <div className="mb-4">
-      <div className={`w-auto h-48 flex items-center justify-center rounded-full ${color}`}>
-        <img src={image} alt={title} className="w-full h-full object-contain rounded-full" />
-      </div>
+    <div className={`w-auto h-48 flex items-center justify-center rounded-full ${color}`}>
+      <Image
+        src={image}
+        alt={title}
+        width={192} // Ajuste selon tes besoins
+        height={192} // Ajuste selon tes besoins
+        className="w-full h-full object-contain rounded-full"
+      />
+    </div>
       <h3 className="text-lg font-semibold mt-4">{title}</h3>
       <p className="text-sm text-gray-600 mb-4">{description}</p>
       <div className="mb-4">
@@ -89,7 +95,7 @@ export default function Service() {
       <h2 className="text-lg font-bold text-center mb-4 text-primary py-2">
         Reservations & Services Disponibles
       </h2>
-      <div className="text-secondary text-center text-2xl font-black mb-8">Réservez votre service en un clic et profitez d'une expérience fluide et rapide !</div>
+      <div className="text-secondary text-center text-2xl font-black mb-8">Réservez votre service en un clic et profitez d&apos;une expérience fluide et rapide !</div>
       <p></p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {services.map((service, index) => (

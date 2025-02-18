@@ -16,10 +16,10 @@ import {
   } from "@nextui-org/react";
 //   import { Calendar, MapPin, Briefcase, User, Car } from "lucide-react";
 import {now, getLocalTimeZone} from "@internationalized/date";
+import Image from "next/image";
   
   export default function ReservationForm() {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
-    const [scrollBehavior, setScrollBehavior] =
         React.useState<"inside" | "outside">("inside");
     const vehicleTypes = [
         {
@@ -45,7 +45,7 @@ import {now, getLocalTimeZone} from "@internationalized/date";
         {
           name: "Véhicule Utilitaire",
           picture: "/assets/images/illustrations/no-background/Véhicule-removebg-preview.png",
-          seats: "N/A", // Pas de nombre de places spécifié
+          seats: "N/A", 
         },
       ];
       
@@ -109,11 +109,13 @@ import {now, getLocalTimeZone} from "@internationalized/date";
                       {vehicleTypes.map((vehicle) => (
                         <Checkbox key={vehicle.name} value={vehicle.name}>
                           <div className="flex items-center space-x-3">
-                            <img
-                              src={vehicle.picture}
-                              alt={vehicle.name}
-                              className="w-10 h-10 rounded-md object-contain"
-                            />
+                          <Image
+                            src={vehicle.picture}
+                            alt={vehicle.name}
+                            width={40} // Taille équivalente à w-10
+                            height={40} // Taille équivalente à h-10
+                            className="rounded-md object-contain"
+                          />
                             <span>{vehicle.name} - {vehicle.seats} places</span>
                           </div>
                         </Checkbox>

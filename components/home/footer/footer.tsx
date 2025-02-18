@@ -13,7 +13,7 @@ export default function Footer() {
             </Link>
           </div>
           <div className="text-gray-300 dark:text-gray-800 text-sm leading-relaxed">
-            L'Art du Voyage, L'Excellence à Chaque Trajet
+            L&apos;Art du Voyage, L&apos;Excellence à Chaque Trajet
           </div>
         </div>
 

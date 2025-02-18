@@ -1,9 +1,6 @@
  "use client";
 
 import Image from "next/image";
-import { Button, Input, DateInput, Checkbox } from "@nextui-org/react";
-import { Calendar, MapPin, Briefcase, User} from "lucide-react";
-import {motion} from "framer-motion";
 import ReservationForm from "./modal";
 
 export default function Hero() {
