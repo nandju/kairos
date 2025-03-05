@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -32,8 +32,13 @@ export const ChickenLogo = () => {
 
 export default function Head() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [toShow,setToShow]= useState("block")
   const pathname = usePathname();
-
+  useEffect(()=>{
+    if(pathname =="/driver" || pathname =="/forgot-password" || pathname =="/login" || pathname =="/sign-up" ){
+      setToShow("none")
+    }
+  },[])
   const menuItems = [
     { name: "Accueil", link: "/" },
     { name: "Services", link: "/services" },
@@ -42,6 +47,8 @@ export default function Head() {
 
   return (
     <Navbar
+    style={{display:toShow}}
+    
       onMenuOpenChange={setIsMenuOpen}
       className="bg-primary"
       maxWidth="full"
