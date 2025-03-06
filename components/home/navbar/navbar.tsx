@@ -15,7 +15,7 @@ import {
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
-export const ChickenLogo = () => {
+export const Logo = () => {
   return (
     <Link href="/" >
       <Image
@@ -32,13 +32,15 @@ export const ChickenLogo = () => {
 
 export default function Head() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [toShow,setToShow]= useState("block")
+  // const [toShow,setToShow]= useState("block")
   const pathname = usePathname();
-  useEffect(()=>{
-    if(pathname =="/driver" || pathname =="/forgot-password" || pathname =="/login" || pathname =="/sign-up" ){
-      setToShow("none")
-    }
-  },[])
+
+  // useEffect(()=>{
+  //   if(pathname =="/driver" || pathname =="/forgot-password" || pathname =="/login" || pathname =="/sign-up" ){
+  //     setToShow("none")
+  //   }
+  // },[])
+
   const menuItems = [
     { name: "Accueil", link: "/" },
     { name: "Services", link: "/services" },
@@ -47,7 +49,7 @@ export default function Head() {
 
   return (
     <Navbar
-    style={{display:toShow}}
+    // style={{display:toShow}}
     
       onMenuOpenChange={setIsMenuOpen}
       className="bg-primary"
@@ -60,10 +62,7 @@ export default function Head() {
           className="sm:hidden text-white"
         />
         <NavbarBrand>
-          <ChickenLogo />
-          {/* <p className="hidden md:block font-bold text-white text-xl ml-2">
-            CHICKEN NATION
-          </p> */}
+          <Logo />
         </NavbarBrand>
       </NavbarContent>
 

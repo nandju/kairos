@@ -47,9 +47,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${title.variable} antialiased`}
       >
       <div className="font-poppins max-w-screen-2xl mx-auto ">
-        <Head/>
           <Providers>{children}</Providers>
-        <Footer/>
       </div> 
       </body>
     </html>

@@ -6,8 +6,6 @@ import Speciality from "@/components/home/speciality/speciality";
 import Testimonials from "@/components/home/testimonials/testimonials";
 
 
-
-
 export default function Home() {
   return (
     <div>
