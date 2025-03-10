@@ -15,7 +15,7 @@ export default function SignUp() {
           <img
             src="/assets/images/illustrations/auth/bg-auth.png"
             alt="picture-left"
-            className="w-full h-full max-w-md rounded-2xl object-cover lg:object-contain"
+            className="w-full h-full max-w-md rounded-2xl object-cover"
           />
         </div>
 
